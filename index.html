@@ -5,139 +5,128 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HazloReal — Aprende haciendo, no memorizando</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --purple-deep: #2D1B69;
-    --purple-mid: #5B3BB5;
-    --purple-bright: #7C4DFF;
-    --purple-light: #B39DFF;
-    --purple-pale: #EDE7FF;
-    --white: #FFFFFF;
-    --off-white: #F8F6FF;
-    --text-dark: #1A1035;
-    --text-mid: #4A3F6B;
-    --text-light: #8B7DB5;
-    --accent: #FF6B35;
-    --accent-soft: #FFE8DF;
-  }
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap');
 
-- { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+–purple-deep: #2D1B69;
+–purple-mid: #5B3BB5;
+–purple-bright: #7C4DFF;
+–purple-light: #B39DFF;
+–purple-pale: #EDE7FF;
+–white: #FFFFFF;
+–off-white: #F8F6FF;
+–text-dark: #1A1035;
+–text-mid: #4A3F6B;
+–text-light: #8B7DB5;
+–accent: #FF6B35;
+}
 
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
 body {
-font-family: ‘DM Sans’, sans-serif;
-background: var(–white);
-color: var(–text-dark);
+font-family: ‘DM Sans’, ‘Segoe UI’, system-ui, sans-serif;
+background: #ffffff;
+color: #1A1035;
 overflow-x: hidden;
+line-height: 1.5;
 }
 
-/* NAV */
+/* ─── NAV ─── */
 nav {
 position: fixed;
 top: 0; left: 0; right: 0;
-z-index: 100;
+z-index: 999;
 display: flex;
 justify-content: space-between;
 align-items: center;
-padding: 20px 60px;
-background: rgba(255,255,255,0.92);
-backdrop-filter: blur(12px);
-border-bottom: 1px solid rgba(124,77,255,0.1);
+padding: 18px 60px;
+background: rgba(255,255,255,0.95);
+backdrop-filter: blur(16px);
+-webkit-backdrop-filter: blur(16px);
+border-bottom: 1px solid rgba(124,77,255,0.12);
 }
 
 .logo {
-font-family: ‘Syne’, sans-serif;
+font-family: ‘Syne’, ‘Arial Black’, sans-serif;
 font-weight: 800;
 font-size: 1.5rem;
-color: var(–purple-deep);
+color: #2D1B69;
 letter-spacing: -0.5px;
-}
-
-.logo span { color: var(–purple-bright); }
-
-nav ul {
-display: flex;
-gap: 36px;
-list-style: none;
-}
-
-nav ul a {
 text-decoration: none;
-color: var(–text-mid);
+}
+.logo span { color: #7C4DFF; }
+
+.nav-links {
+display: flex;
+gap: 32px;
+list-style: none;
+align-items: center;
+}
+.nav-links a {
+text-decoration: none;
+color: #4A3F6B;
 font-size: 0.9rem;
 font-weight: 500;
 transition: color 0.2s;
 }
-
-nav ul a:hover { color: var(–purple-bright); }
+.nav-links a:hover { color: #7C4DFF; }
 
 .nav-cta {
-background: var(–purple-bright);
-color: white !important;
-padding: 10px 22px;
+background: #7C4DFF !important;
+color: #fff !important;
+padding: 10px 24px !important;
 border-radius: 100px;
 font-weight: 600 !important;
-transition: background 0.2s, transform 0.2s !important;
+transition: all 0.2s !important;
+box-shadow: 0 4px 16px rgba(124,77,255,0.3);
 }
-
 .nav-cta:hover {
-background: var(–purple-deep) !important;
+background: #2D1B69 !important;
 transform: translateY(-1px);
 }
 
-/* HERO */
+/* ─── HERO ─── */
 .hero {
 min-height: 100vh;
 display: flex;
 align-items: center;
 position: relative;
 overflow: hidden;
-padding: 120px 60px 80px;
+padding: 130px 60px 80px;
+background: linear-gradient(135deg, #F8F6FF 0%, #F0EBFF 50%, #ffffff 100%);
 }
 
-.hero-bg {
+.hero-blob1 {
 position: absolute;
-inset: 0;
-background: linear-gradient(135deg, var(–off-white) 0%, #F0EBFF 50%, var(–white) 100%);
-z-index: 0;
-}
-
-.hero-blob {
-position: absolute;
-width: 700px;
-height: 700px;
-background: radial-gradient(circle, rgba(124,77,255,0.12) 0%, transparent 70%);
-right: -100px;
-top: 50%;
+width: 700px; height: 700px;
+background: radial-gradient(circle, rgba(124,77,255,0.13) 0%, transparent 70%);
+right: -80px; top: 50%;
 transform: translateY(-50%);
-z-index: 0;
+pointer-events: none;
 }
-
 .hero-blob2 {
 position: absolute;
-width: 400px;
-height: 400px;
-background: radial-gradient(circle, rgba(255,107,53,0.08) 0%, transparent 70%);
-left: 200px;
-bottom: -100px;
-z-index: 0;
+width: 400px; height: 400px;
+background: radial-gradient(circle, rgba(255,107,53,0.07) 0%, transparent 70%);
+left: 300px; bottom: -80px;
+pointer-events: none;
 }
 
 .hero-content {
 position: relative;
-z-index: 1;
-max-width: 680px;
+z-index: 2;
+max-width: 640px;
 }
 
 .hero-badge {
 display: inline-flex;
 align-items: center;
 gap: 8px;
-background: var(–purple-pale);
-color: var(–purple-mid);
-padding: 8px 16px;
+background: #EDE7FF;
+color: #5B3BB5;
+padding: 8px 18px;
 border-radius: 100px;
 font-size: 0.82rem;
 font-weight: 600;
@@ -145,60 +134,58 @@ letter-spacing: 0.3px;
 margin-bottom: 28px;
 animation: fadeUp 0.6s ease both;
 }
-
-.hero-badge::before {
-content: ‘’;
-width: 6px; height: 6px;
-background: var(–purple-bright);
+.hero-badge-dot {
+width: 7px; height: 7px;
+background: #7C4DFF;
 border-radius: 50%;
 animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
 0%, 100% { opacity: 1; transform: scale(1); }
-50% { opacity: 0.5; transform: scale(0.8); }
+50% { opacity: 0.4; transform: scale(0.75); }
 }
 
-h1 {
-font-family: ‘Syne’, sans-serif;
-font-size: clamp(2.8rem, 5vw, 4.2rem);
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(22px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+.hero h1 {
+font-family: ‘Syne’, ‘Arial Black’, sans-serif;
+font-size: clamp(2.6rem, 5vw, 4rem);
 font-weight: 800;
 line-height: 1.08;
 letter-spacing: -1.5px;
-color: var(–text-dark);
-margin-bottom: 24px;
+color: #1A1035;
+margin-bottom: 22px;
 animation: fadeUp 0.6s 0.1s ease both;
 }
 
-h1 .highlight {
-color: var(–purple-bright);
+.hero h1 .hl {
+color: #7C4DFF;
 position: relative;
+display: inline-block;
 }
-
-h1 .highlight::after {
+.hero h1 .hl::after {
 content: ‘’;
 position: absolute;
-bottom: 2px;
-left: 0; right: 0;
+bottom: 0px; left: 0; right: 0;
 height: 4px;
-background: linear-gradient(90deg, var(–purple-bright), var(–accent));
+background: linear-gradient(90deg, #7C4DFF, #FF6B35);
 border-radius: 2px;
-opacity: 0.4;
+opacity: 0.35;
 }
 
 .hero-sub {
-font-size: 1.15rem;
-color: var(–text-mid);
-line-height: 1.7;
-margin-bottom: 40px;
+font-size: 1.1rem;
+color: #4A3F6B;
+line-height: 1.75;
+margin-bottom: 38px;
 font-weight: 300;
 animation: fadeUp 0.6s 0.2s ease both;
 }
-
-.hero-sub strong {
-color: var(–text-dark);
-font-weight: 500;
-}
+.hero-sub strong { color: #1A1035; font-weight: 600; }
 
 .hero-actions {
 display: flex;
@@ -209,9 +196,9 @@ animation: fadeUp 0.6s 0.3s ease both;
 }
 
 .btn-primary {
-background: var(–purple-bright);
-color: white;
-padding: 16px 32px;
+background: #7C4DFF;
+color: #fff;
+padding: 15px 32px;
 border-radius: 100px;
 font-size: 1rem;
 font-weight: 600;
@@ -220,17 +207,19 @@ display: inline-flex;
 align-items: center;
 gap: 8px;
 transition: all 0.25s;
-box-shadow: 0 8px 32px rgba(124,77,255,0.35);
+box-shadow: 0 8px 28px rgba(124,77,255,0.38);
+border: none;
+cursor: pointer;
+font-family: inherit;
 }
-
 .btn-primary:hover {
-background: var(–purple-deep);
+background: #2D1B69;
 transform: translateY(-2px);
-box-shadow: 0 12px 40px rgba(124,77,255,0.45);
+box-shadow: 0 14px 36px rgba(124,77,255,0.42);
 }
 
-.btn-secondary {
-color: var(–text-mid);
+.btn-ghost {
+color: #4A3F6B;
 font-size: 0.95rem;
 font-weight: 500;
 text-decoration: none;
@@ -239,293 +228,235 @@ align-items: center;
 gap: 6px;
 transition: color 0.2s;
 }
-
-.btn-secondary:hover { color: var(–purple-bright); }
+.btn-ghost:hover { color: #7C4DFF; }
 
 .hero-stats {
 display: flex;
-gap: 40px;
-margin-top: 56px;
+gap: 44px;
+margin-top: 52px;
 animation: fadeUp 0.6s 0.4s ease both;
 }
-
-.stat {
-display: flex;
-flex-direction: column;
-gap: 2px;
-}
-
 .stat-num {
-font-family: ‘Syne’, sans-serif;
-font-size: 1.8rem;
+display: block;
+font-family: ‘Syne’, ‘Arial Black’, sans-serif;
+font-size: 2rem;
 font-weight: 800;
-color: var(–purple-deep);
+color: #2D1B69;
 letter-spacing: -1px;
+line-height: 1;
 }
-
 .stat-label {
-font-size: 0.8rem;
-color: var(–text-light);
-font-weight: 400;
+display: block;
+font-size: 0.78rem;
+color: #8B7DB5;
+margin-top: 3px;
 }
 
-/* HERO VISUAL */
+/* ─── HERO CARD ─── */
 .hero-visual {
 position: absolute;
-right: 60px;
+right: 80px;
 top: 50%;
 transform: translateY(-50%);
-z-index: 1;
-animation: fadeUp 0.8s 0.2s ease both;
+z-index: 2;
+animation: fadeUp 0.8s 0.25s ease both;
 }
 
-.course-card-demo {
-background: white;
-border-radius: 20px;
+.demo-card {
+background: #fff;
+border-radius: 22px;
 padding: 28px;
 width: 340px;
-box-shadow: 0 24px 80px rgba(45,27,105,0.15);
+box-shadow: 0 28px 80px rgba(45,27,105,0.16), 0 4px 16px rgba(45,27,105,0.06);
 border: 1px solid rgba(124,77,255,0.1);
+position: relative;
 }
 
-.card-header {
+.demo-float {
+position: absolute;
+background: #fff;
+border-radius: 14px;
+padding: 10px 14px;
+box-shadow: 0 8px 32px rgba(45,27,105,0.13);
+border: 1px solid rgba(124,77,255,0.1);
+display: flex;
+align-items: center;
+gap: 10px;
+font-size: 0.76rem;
+color: #4A3F6B;
+white-space: nowrap;
+}
+.demo-float.top { top: -18px; right: -18px; }
+.demo-float.bot { bottom: -18px; left: -18px; }
+.demo-float-icon {
+width: 30px; height: 30px;
+border-radius: 8px;
+display: flex; align-items: center; justify-content: center;
+font-size: 0.85rem;
+}
+
+.demo-header {
 display: flex;
 align-items: center;
 gap: 12px;
-margin-bottom: 20px;
+margin-bottom: 18px;
 }
-
-.card-icon {
+.demo-icon {
 width: 44px; height: 44px;
-background: var(–purple-pale);
+background: #EDE7FF;
 border-radius: 12px;
-display: flex;
-align-items: center;
-justify-content: center;
+display: flex; align-items: center; justify-content: center;
 font-size: 1.2rem;
+flex-shrink: 0;
 }
-
-.card-title {
+.demo-title {
 font-family: ‘Syne’, sans-serif;
-font-size: 0.95rem;
+font-size: 0.9rem;
 font-weight: 700;
-color: var(–text-dark);
+color: #1A1035;
 line-height: 1.3;
 }
-
-.card-tag {
-font-size: 0.72rem;
-color: var(–purple-mid);
-font-weight: 500;
+.demo-tag {
+font-size: 0.7rem;
+color: #5B3BB5;
 margin-top: 2px;
 }
 
-.lesson-list {
+.demo-lessons {
 display: flex;
 flex-direction: column;
-gap: 10px;
-margin-bottom: 20px;
+gap: 8px;
+margin-bottom: 18px;
 }
-
-.lesson-item {
+.demo-lesson {
 display: flex;
 align-items: center;
 gap: 10px;
-padding: 10px 12px;
+padding: 9px 12px;
 border-radius: 10px;
-font-size: 0.82rem;
-color: var(–text-mid);
-transition: background 0.2s;
+font-size: 0.8rem;
+color: #4A3F6B;
 }
-
-.lesson-item.active {
-background: var(–purple-pale);
-color: var(–purple-deep);
+.demo-lesson.active {
+background: #EDE7FF;
+color: #2D1B69;
 font-weight: 500;
 }
-
 .lesson-dot {
-width: 6px; height: 6px;
+width: 7px; height: 7px;
 border-radius: 50%;
-background: var(–purple-light);
+background: #B39DFF;
 flex-shrink: 0;
 }
+.demo-lesson.active .lesson-dot { background: #7C4DFF; }
+.demo-lesson.done .lesson-dot { background: #22C55E; }
 
-.lesson-item.active .lesson-dot {
-background: var(–purple-bright);
-}
-
-.lesson-item.done .lesson-dot {
-background: #22C55E;
-}
-
-.ai-chat-box {
-background: var(–off-white);
+.demo-ai {
+background: #F8F6FF;
 border-radius: 12px;
 padding: 14px;
-border: 1px solid var(–purple-pale);
+border: 1px solid #EDE7FF;
 }
-
-.ai-label {
-font-size: 0.7rem;
+.demo-ai-label {
+font-size: 0.68rem;
 font-weight: 700;
-color: var(–purple-mid);
-letter-spacing: 0.5px;
+color: #5B3BB5;
+letter-spacing: 0.6px;
 text-transform: uppercase;
-margin-bottom: 8px;
+margin-bottom: 7px;
 display: flex;
 align-items: center;
-gap: 6px;
+gap: 5px;
 }
-
-.ai-label::before {
-content: ‘✦’;
-color: var(–purple-bright);
-font-size: 0.6rem;
+.demo-ai-text {
+font-size: 0.79rem;
+color: #4A3F6B;
+line-height: 1.55;
 }
+.demo-ai-text strong { color: #1A1035; }
 
-.ai-message {
-font-size: 0.8rem;
-color: var(–text-mid);
-line-height: 1.5;
-}
+/* ─── SECTIONS ─── */
+section { padding: 100px 60px; }
 
-.ai-message strong { color: var(–text-dark); }
-
-/* FLOATING CARD */
-.floating-badge {
-position: absolute;
-background: white;
-border-radius: 14px;
-padding: 12px 16px;
-box-shadow: 0 12px 40px rgba(45,27,105,0.12);
-border: 1px solid rgba(124,77,255,0.1);
-font-size: 0.78rem;
-display: flex;
-align-items: center;
-gap: 10px;
-}
-
-.floating-badge.top {
-top: -20px;
-right: -20px;
-color: var(–text-mid);
-}
-
-.floating-badge.bottom {
-bottom: -20px;
-left: -20px;
-color: var(–text-mid);
-}
-
-.badge-icon {
-width: 32px; height: 32px;
-border-radius: 8px;
-display: flex;
-align-items: center;
-justify-content: center;
-font-size: 0.9rem;
-}
-
-/* SECTION GENERAL */
-section {
-padding: 100px 60px;
-}
-
-.section-label {
-font-size: 0.78rem;
+.s-label {
+font-size: 0.75rem;
 font-weight: 700;
-letter-spacing: 1.5px;
+letter-spacing: 1.8px;
 text-transform: uppercase;
-color: var(–purple-bright);
+color: #7C4DFF;
+margin-bottom: 12px;
+}
+.s-title {
+font-family: ‘Syne’, ‘Arial Black’, sans-serif;
+font-size: clamp(1.9rem, 3.2vw, 2.7rem);
+font-weight: 800;
+line-height: 1.12;
+letter-spacing: -0.8px;
+color: #1A1035;
 margin-bottom: 14px;
 }
-
-.section-title {
-font-family: ‘Syne’, sans-serif;
-font-size: clamp(2rem, 3.5vw, 2.8rem);
-font-weight: 800;
-line-height: 1.15;
-letter-spacing: -0.8px;
-color: var(–text-dark);
-margin-bottom: 16px;
-}
-
-.section-sub {
+.s-sub {
 font-size: 1.05rem;
-color: var(–text-mid);
-line-height: 1.7;
-max-width: 560px;
+color: #4A3F6B;
+line-height: 1.72;
+max-width: 540px;
 font-weight: 300;
 }
 
-/* DIFERENCIADORES */
-.diff-section {
-background: var(–off-white);
-}
+/* ─── WHY SECTION ─── */
+.why-section { background: #F8F6FF; }
 
 .diff-grid {
 display: grid;
 grid-template-columns: repeat(3, 1fr);
-gap: 24px;
-margin-top: 56px;
+gap: 22px;
+margin-top: 54px;
 }
 
 .diff-card {
-background: white;
+background: #fff;
 border-radius: 20px;
-padding: 32px;
-border: 1px solid rgba(124,77,255,0.08);
+padding: 30px;
+border: 1px solid rgba(124,77,255,0.09);
 transition: all 0.3s;
 position: relative;
 overflow: hidden;
 }
-
 .diff-card::before {
 content: ‘’;
 position: absolute;
 top: 0; left: 0; right: 0;
 height: 3px;
-background: linear-gradient(90deg, var(–purple-bright), var(–purple-light));
-opacity: 0;
-transition: opacity 0.3s;
+background: linear-gradient(90deg, #7C4DFF, #B39DFF);
+transform: scaleX(0);
+transform-origin: left;
+transition: transform 0.3s;
 }
+.diff-card:hover { transform: translateY(-5px); box-shadow: 0 20px 60px rgba(45,27,105,0.1); }
+.diff-card:hover::before { transform: scaleX(1); }
 
-.diff-card:hover {
-transform: translateY(-4px);
-box-shadow: 0 20px 60px rgba(45,27,105,0.1);
-}
-
-.diff-card:hover::before { opacity: 1; }
-
-.diff-emoji {
-font-size: 2rem;
-margin-bottom: 18px;
-display: block;
-}
-
+.diff-emoji { font-size: 2.2rem; display: block; margin-bottom: 16px; }
 .diff-card h3 {
 font-family: ‘Syne’, sans-serif;
-font-size: 1.15rem;
+font-size: 1.05rem;
 font-weight: 700;
-color: var(–text-dark);
+color: #1A1035;
 margin-bottom: 10px;
-letter-spacing: -0.3px;
+letter-spacing: -0.2px;
 }
-
 .diff-card p {
-font-size: 0.88rem;
-color: var(–text-mid);
+font-size: 0.86rem;
+color: #4A3F6B;
 line-height: 1.65;
 font-weight: 300;
 }
 
-/* CURSOS */
+/* ─── COURSES ─── */
 .courses-grid {
 display: grid;
 grid-template-columns: repeat(3, 1fr);
-gap: 24px;
-margin-top: 56px;
+gap: 22px;
+margin-top: 54px;
 }
 
 .course-card {
@@ -533,260 +464,299 @@ border-radius: 20px;
 overflow: hidden;
 border: 1px solid rgba(124,77,255,0.1);
 transition: all 0.3s;
-background: white;
+background: #fff;
 }
-
-.course-card:hover {
-transform: translateY(-4px);
-box-shadow: 0 20px 60px rgba(45,27,105,0.12);
-}
+.course-card:hover { transform: translateY(-5px); box-shadow: 0 20px 60px rgba(45,27,105,0.13); }
 
 .course-thumb {
 height: 140px;
 display: flex;
 align-items: center;
 justify-content: center;
-font-size: 3rem;
+font-size: 2.8rem;
 position: relative;
 }
-
-.course-thumb.c1 { background: linear-gradient(135deg, #EDE7FF, #D4C5FF); }
-.course-thumb.c2 { background: linear-gradient(135deg, #FFE8DF, #FFD0BF); }
-.course-thumb.c3 { background: linear-gradient(135deg, #E8F5E9, #C8E6C9); }
-.course-thumb.c4 { background: linear-gradient(135deg, #E3F2FD, #BBDEFB); }
-.course-thumb.c5 { background: linear-gradient(135deg, #FFF8E1, #FFECB3); }
-.course-thumb.c6 { background: linear-gradient(135deg, #FCE4EC, #F8BBD0); }
+.ct1 { background: linear-gradient(135deg, #EDE7FF, #D4C5FF); }
+.ct2 { background: linear-gradient(135deg, #FFE8DF, #FFD0BF); }
+.ct3 { background: linear-gradient(135deg, #E8F5E9, #C8E6C9); }
+.ct4 { background: linear-gradient(135deg, #E3F2FD, #BBDEFB); }
+.ct5 { background: linear-gradient(135deg, #FFF8E1, #FFECB3); }
+.ct6 { background: linear-gradient(135deg, #FCE4EC, #F8BBD0); }
 
 .course-level {
 position: absolute;
 top: 12px; right: 12px;
-background: rgba(255,255,255,0.85);
-backdrop-filter: blur(6px);
+background: rgba(255,255,255,0.88);
+backdrop-filter: blur(4px);
 padding: 4px 10px;
 border-radius: 100px;
-font-size: 0.7rem;
+font-size: 0.68rem;
 font-weight: 600;
-color: var(–text-mid);
+color: #4A3F6B;
 }
 
-.course-body {
-padding: 22px;
-}
-
+.course-body { padding: 22px; }
 .course-body h3 {
 font-family: ‘Syne’, sans-serif;
 font-size: 1rem;
 font-weight: 700;
-color: var(–text-dark);
+color: #1A1035;
 margin-bottom: 8px;
-letter-spacing: -0.2px;
 line-height: 1.3;
 }
-
 .course-body p {
 font-size: 0.82rem;
-color: var(–text-light);
+color: #8B7DB5;
 line-height: 1.55;
-margin-bottom: 16px;
+margin-bottom: 14px;
 }
-
 .course-meta {
 display: flex;
-gap: 16px;
-font-size: 0.76rem;
-color: var(–text-light);
+gap: 14px;
+font-size: 0.75rem;
+color: #8B7DB5;
+flex-wrap: wrap;
 }
 
-.course-meta span {
-display: flex;
-align-items: center;
-gap: 4px;
-}
-
-/* AI TUTOR */
+/* ─── AI SECTION ─── */
 .ai-section {
-background: var(–purple-deep);
-color: white;
+background: #2D1B69;
+color: #fff;
 position: relative;
 overflow: hidden;
 }
-
 .ai-section::before {
 content: ‘’;
 position: absolute;
 width: 600px; height: 600px;
-background: radial-gradient(circle, rgba(124,77,255,0.3) 0%, transparent 70%);
-right: -100px; top: -100px;
+background: radial-gradient(circle, rgba(124,77,255,0.28) 0%, transparent 70%);
+right: -80px; top: -80px;
+pointer-events: none;
 }
 
-.ai-section .section-title { color: white; }
-.ai-section .section-sub { color: rgba(255,255,255,0.65); }
-.ai-section .section-label { color: var(–purple-light); }
-
-.ai-demo {
-background: rgba(255,255,255,0.06);
-border: 1px solid rgba(255,255,255,0.12);
-border-radius: 24px;
-padding: 32px;
-max-width: 560px;
-margin-top: 48px;
-backdrop-filter: blur(10px);
+.two-col {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 72px;
+align-items: center;
+position: relative;
+z-index: 1;
 }
 
-.chat-msg {
+.ai-section .s-title { color: #fff; }
+.ai-section .s-sub { color: rgba(255,255,255,0.62); max-width: 460px; }
+.ai-section .s-label { color: #B39DFF; }
+
+.ai-checks {
 display: flex;
-gap: 12px;
-margin-bottom: 20px;
+flex-direction: column;
+gap: 14px;
+margin-top: 30px;
 }
-
-.chat-avatar {
-width: 36px; height: 36px;
-border-radius: 50%;
+.ai-check {
 display: flex;
 align-items: center;
-justify-content: center;
-font-size: 0.9rem;
+gap: 12px;
+font-size: 0.88rem;
+color: rgba(255,255,255,0.78);
+}
+.ai-check-dot {
+width: 26px; height: 26px;
+background: rgba(124,77,255,0.35);
+border-radius: 50%;
+display: flex; align-items: center; justify-content: center;
+font-size: 0.65rem;
+color: #fff;
 flex-shrink: 0;
 }
 
-.chat-avatar.user { background: rgba(255,255,255,0.1); }
-.chat-avatar.ai { background: var(–purple-bright); }
+.ai-demo-box {
+background: rgba(255,255,255,0.07);
+border: 1px solid rgba(255,255,255,0.13);
+border-radius: 22px;
+padding: 28px;
+backdrop-filter: blur(8px);
+}
+.ai-demo-label {
+font-size: 0.7rem;
+font-weight: 700;
+letter-spacing: 1.2px;
+text-transform: uppercase;
+color: rgba(255,255,255,0.35);
+margin-bottom: 20px;
+}
 
-.chat-bubble {
-background: rgba(255,255,255,0.08);
-border-radius: 14px 14px 14px 2px;
-padding: 12px 16px;
+.chat-row {
+display: flex;
+gap: 12px;
+margin-bottom: 16px;
+}
+.chat-av {
+width: 34px; height: 34px;
+border-radius: 50%;
+display: flex; align-items: center; justify-content: center;
 font-size: 0.85rem;
+flex-shrink: 0;
+}
+.chat-av.u { background: rgba(255,255,255,0.1); }
+.chat-av.a { background: #7C4DFF; font-size: 0.7rem; color: #fff; font-weight: 700; }
+
+.chat-bub {
+padding: 11px 15px;
+border-radius: 14px 14px 14px 3px;
+font-size: 0.83rem;
 line-height: 1.6;
-color: rgba(255,255,255,0.85);
-max-width: 420px;
+color: rgba(255,255,255,0.83);
+background: rgba(255,255,255,0.08);
+max-width: 400px;
+}
+.chat-bub.u {
+background: #5B3BB5;
+border-radius: 14px 14px 3px 14px;
+color: #fff;
+margin-left: auto;
 }
 
-.chat-bubble.user-bubble {
-background: var(–purple-mid);
-border-radius: 14px 14px 2px 14px;
-color: white;
-}
-
-.chat-typing {
+.typing {
 display: flex;
 gap: 4px;
 align-items: center;
-padding: 8px 0;
+padding: 6px 0 0 46px;
 }
-
-.dot-typing {
+.typing-dot {
 width: 6px; height: 6px;
 border-radius: 50%;
-background: var(–purple-light);
-animation: typing 1.2s infinite;
+background: #B39DFF;
+animation: blink 1.2s infinite;
 }
-
-.dot-typing:nth-child(2) { animation-delay: 0.2s; }
-.dot-typing:nth-child(3) { animation-delay: 0.4s; }
-
-@keyframes typing {
-0%, 100% { opacity: 0.3; transform: translateY(0); }
+.typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-dot:nth-child(3) { animation-delay: 0.4s; }
+@keyframes blink {
+0%, 100% { opacity: 0.25; transform: translateY(0); }
 50% { opacity: 1; transform: translateY(-3px); }
 }
+.typing-txt {
+font-size: 0.72rem;
+color: rgba(255,255,255,0.3);
+margin-left: 6px;
+}
 
-/* PRICING */
-.pricing-grid {
+/* ─── TESTIMONIOS ─── */
+.testi-section { background: #F8F6FF; }
+.testi-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 20px;
+margin-top: 54px;
+}
+.testi-card {
+background: #fff;
+border-radius: 20px;
+padding: 28px;
+border: 1px solid rgba(124,77,255,0.08);
+}
+.testi-stars { color: #F59E0B; font-size: 0.85rem; letter-spacing: 2px; margin-bottom: 14px; }
+.testi-text {
+font-size: 0.87rem;
+color: #4A3F6B;
+line-height: 1.68;
+margin-bottom: 20px;
+font-weight: 300;
+}
+.testi-author { display: flex; align-items: center; gap: 12px; }
+.testi-av {
+width: 38px; height: 38px;
+border-radius: 50%;
+display: flex; align-items: center; justify-content: center;
+font-size: 0.9rem;
+font-weight: 700;
+color: #fff;
+font-family: ‘Syne’, sans-serif;
+flex-shrink: 0;
+}
+.testi-name { font-size: 0.85rem; font-weight: 600; color: #1A1035; }
+.testi-role { font-size: 0.73rem; color: #8B7DB5; margin-top: 1px; }
+
+/* ─── PRICING ─── */
+.pricing-wrap {
 display: grid;
 grid-template-columns: repeat(2, 1fr);
 gap: 24px;
-max-width: 760px;
-margin: 56px auto 0;
+max-width: 740px;
+margin: 52px auto 0;
 }
-
 .price-card {
 border-radius: 24px;
 padding: 36px;
 border: 2px solid rgba(124,77,255,0.15);
+background: #fff;
 transition: all 0.3s;
-background: white;
 }
-
-.price-card.featured {
-border-color: var(–purple-bright);
-background: linear-gradient(135deg, var(–purple-deep), var(–purple-mid));
-color: white;
+.price-card:hover { box-shadow: 0 16px 50px rgba(45,27,105,0.1); }
+.price-card.hot {
+background: linear-gradient(145deg, #2D1B69, #5B3BB5);
+border-color: #7C4DFF;
 position: relative;
 }
-
-.featured-tag {
+.hot-tag {
 position: absolute;
-top: -14px;
-left: 50%;
+top: -13px; left: 50%;
 transform: translateX(-50%);
-background: var(–accent);
-color: white;
-font-size: 0.72rem;
+background: #FF6B35;
+color: #fff;
+font-size: 0.7rem;
 font-weight: 700;
 letter-spacing: 0.5px;
-padding: 5px 14px;
+padding: 4px 14px;
 border-radius: 100px;
 white-space: nowrap;
 }
-
 .price-name {
 font-family: ‘Syne’, sans-serif;
 font-size: 1rem;
 font-weight: 700;
-margin-bottom: 8px;
+color: #1A1035;
+margin-bottom: 6px;
 }
-
+.price-card.hot .price-name { color: #fff; }
 .price-amount {
 font-family: ‘Syne’, sans-serif;
-font-size: 2.8rem;
+font-size: 3rem;
 font-weight: 800;
-letter-spacing: -1.5px;
+letter-spacing: -2px;
 line-height: 1;
-margin-bottom: 4px;
+color: #1A1035;
+margin-bottom: 3px;
 }
+.price-card.hot .price-amount { color: #fff; }
+.price-per { font-size: 0.8rem; color: #8B7DB5; margin-bottom: 26px; }
+.price-card.hot .price-per { color: rgba(255,255,255,0.55); }
 
-.price-period {
-font-size: 0.82rem;
-color: var(–text-light);
-margin-bottom: 28px;
-}
-
-.price-card.featured .price-period { color: rgba(255,255,255,0.6); }
-
-.price-features {
+.price-list {
 list-style: none;
 display: flex;
 flex-direction: column;
-gap: 12px;
-margin-bottom: 28px;
+gap: 11px;
+margin-bottom: 26px;
 }
-
-.price-features li {
+.price-list li {
 display: flex;
 align-items: center;
 gap: 10px;
-font-size: 0.87rem;
-color: var(–text-mid);
+font-size: 0.86rem;
+color: #4A3F6B;
 }
-
-.price-card.featured .price-features li { color: rgba(255,255,255,0.8); }
-
-.check {
+.price-card.hot .price-list li { color: rgba(255,255,255,0.82); }
+.price-check {
 width: 20px; height: 20px;
 border-radius: 50%;
-background: var(–purple-pale);
-display: flex;
-align-items: center;
-justify-content: center;
+background: #EDE7FF;
+display: flex; align-items: center; justify-content: center;
 font-size: 0.6rem;
-color: var(–purple-bright);
+color: #7C4DFF;
 flex-shrink: 0;
 }
-
-.price-card.featured .check {
-background: rgba(255,255,255,0.15);
-color: white;
-}
+.price-card.hot .price-check { background: rgba(255,255,255,0.18); color: #fff; }
 
 .price-btn {
 width: 100%;
@@ -795,170 +765,73 @@ border-radius: 100px;
 font-size: 0.95rem;
 font-weight: 600;
 cursor: pointer;
-border: none;
-transition: all 0.25s;
-font-family: ‘DM Sans’, sans-serif;
-}
-
-.price-btn.outline {
+border: 2px solid rgba(124,77,255,0.2);
 background: transparent;
-border: 2px solid rgba(124,77,255,0.25);
-color: var(–text-dark);
+color: #1A1035;
+transition: all 0.25s;
+font-family: inherit;
 }
-
-.price-btn.outline:hover {
-border-color: var(–purple-bright);
-color: var(–purple-bright);
-}
-
+.price-btn:hover { border-color: #7C4DFF; color: #7C4DFF; }
 .price-btn.solid {
-background: white;
-color: var(–purple-deep);
+background: #fff;
+border-color: transparent;
+color: #2D1B69;
+box-shadow: 0 4px 16px rgba(0,0,0,0.1);
 }
+.price-btn.solid:hover { background: #EDE7FF; }
 
-.price-btn.solid:hover {
-background: var(–purple-pale);
-}
+/* ─── TEXT CENTER ─── */
+.tc { text-align: center; }
+.tc .s-sub { margin: 0 auto; }
 
-/* TESTIMONIALS */
-.testimonials-section { background: var(–off-white); }
-
-.testimonials-grid {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 20px;
-margin-top: 56px;
-}
-
-.testi-card {
-background: white;
-border-radius: 20px;
-padding: 28px;
-border: 1px solid rgba(124,77,255,0.08);
-}
-
-.testi-stars {
-color: #FFC107;
-font-size: 0.85rem;
-margin-bottom: 14px;
-letter-spacing: 2px;
-}
-
-.testi-text {
-font-size: 0.88rem;
-color: var(–text-mid);
-line-height: 1.65;
-margin-bottom: 20px;
-font-weight: 300;
-}
-
-.testi-author {
-display: flex;
-align-items: center;
-gap: 12px;
-}
-
-.testi-avatar {
-width: 38px; height: 38px;
-border-radius: 50%;
-display: flex;
-align-items: center;
-justify-content: center;
-font-size: 0.9rem;
-font-weight: 700;
-color: white;
-font-family: ‘Syne’, sans-serif;
-}
-
-.testi-name {
-font-size: 0.85rem;
-font-weight: 600;
-color: var(–text-dark);
-}
-
-.testi-role {
-font-size: 0.75rem;
-color: var(–text-light);
-}
-
-/* FOOTER */
+/* ─── FOOTER ─── */
 footer {
-background: var(–text-dark);
-color: rgba(255,255,255,0.6);
-padding: 60px;
+background: #1A1035;
+color: rgba(255,255,255,0.55);
+padding: 52px 60px;
 display: flex;
 justify-content: space-between;
 align-items: center;
+flex-wrap: wrap;
+gap: 24px;
 }
-
 .footer-logo {
 font-family: ‘Syne’, sans-serif;
 font-weight: 800;
 font-size: 1.4rem;
-color: white;
+color: #fff;
 }
-
-.footer-logo span { color: var(–purple-light); }
-
-footer p {
-font-size: 0.82rem;
-margin-top: 6px;
-}
-
-.footer-links {
-display: flex;
-gap: 28px;
-}
-
+.footer-logo span { color: #B39DFF; }
+footer p { font-size: 0.8rem; margin-top: 5px; }
+.footer-links { display: flex; gap: 26px; flex-wrap: wrap; }
 .footer-links a {
-color: rgba(255,255,255,0.5);
+color: rgba(255,255,255,0.45);
 text-decoration: none;
 font-size: 0.82rem;
 transition: color 0.2s;
 }
+.footer-links a:hover { color: #B39DFF; }
 
-.footer-links a:hover { color: var(–purple-light); }
-
-/* ANIMATIONS */
-@keyframes fadeUp {
-from { opacity: 0; transform: translateY(24px); }
-to { opacity: 1; transform: translateY(0); }
-}
-
-.fade-in {
+/* ─── FADE ANIMATION ─── */
+.fi {
 opacity: 0;
-transform: translateY(20px);
-transition: opacity 0.6s ease, transform 0.6s ease;
+transform: translateY(22px);
+transition: opacity 0.55s ease, transform 0.55s ease;
 }
+.fi.vis { opacity: 1; transform: translateY(0); }
 
-.fade-in.visible {
-opacity: 1;
-transform: translateY(0);
-}
-
-/* LAYOUT HELPERS */
-.two-col {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 80px;
-align-items: center;
-}
-
-.text-center { text-align: center; }
-.text-center .section-sub { margin: 0 auto; }
-
-@media (max-width: 900px) {
-nav { padding: 16px 24px; }
-nav ul { display: none; }
-.hero { padding: 100px 24px 60px; }
+/* ─── RESPONSIVE ─── */
+@media (max-width: 1024px) {
 .hero-visual { display: none; }
-section { padding: 70px 24px; }
-.diff-grid, .courses-grid, .testimonials-grid { grid-template-columns: 1fr; }
-.pricing-grid { grid-template-columns: 1fr; }
-.two-col { grid-template-columns: 1fr; gap: 40px; }
-footer { flex-direction: column; gap: 24px; text-align: center; }
-.footer-links { flex-wrap: wrap; justify-content: center; }
-h1 { font-size: 2.4rem; }
+nav { padding: 16px 28px; }
+nav .nav-links li:not(:last-child) { display: none; }
+section { padding: 72px 28px; }
+.diff-grid, .courses-grid, .testi-grid { grid-template-columns: 1fr; }
+.pricing-wrap { grid-template-columns: 1fr; max-width: 440px; }
+.two-col { grid-template-columns: 1fr; gap: 44px; }
+.hero { padding: 110px 28px 70px; }
+footer { flex-direction: column; text-align: center; }
+.footer-links { justify-content: center; }
 }
 </style>
 
@@ -968,10 +841,10 @@ h1 { font-size: 2.4rem; }
 <!-- NAV -->
 
 <nav>
-  <div class="logo">Hazlo<span>Real</span></div>
-  <ul>
+  <a href="#" class="logo">Hazlo<span>Real</span></a>
+  <ul class="nav-links">
     <li><a href="#cursos">Cursos</a></li>
-    <li><a href="#diferencias">Por qué nosotros</a></li>
+    <li><a href="#por-que">Por qué nosotros</a></li>
     <li><a href="#precios">Precios</a></li>
     <li><a href="#cursos" class="nav-cta">Empezar gratis</a></li>
   </ul>
@@ -980,84 +853,93 @@ h1 { font-size: 2.4rem; }
 <!-- HERO -->
 
 <section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-blob"></div>
+  <div class="hero-blob1"></div>
   <div class="hero-blob2"></div>
 
   <div class="hero-content">
-    <div class="hero-badge">Nueva forma de aprender</div>
-    <h1>Aprende lo que<br>pasa de verdad<br>en las <span class="highlight">empresas</span></h1>
-    <p class="hero-sub">
-      Sin teoría vacía. Sin relleno. Solo situaciones reales, tareas reales y un <strong>tutor IA disponible 24h</strong> para cuando te bloquees.
-    </p>
-    <div class="hero-actions">
-      <a href="#cursos" class="btn-primary">Explorar cursos gratis →</a>
-      <a href="#diferencias" class="btn-secondary">¿Cómo funciona? ↓</a>
+    <div class="hero-badge">
+      <div class="hero-badge-dot"></div>
+      Nueva forma de aprender
     </div>
-    <div class="hero-stats">
-      <div class="stat">
-        <span class="stat-num">50+</span>
-        <span class="stat-label">Cursos prácticos</span>
-      </div>
-      <div class="stat">
-        <span class="stat-num">24h</span>
-        <span class="stat-label">Tutor IA disponible</span>
-      </div>
-      <div class="stat">
-        <span class="stat-num">100%</span>
-        <span class="stat-label">Casos reales</span>
-      </div>
-    </div>
+
+```
+<h1>Aprende lo que<br>pasa de verdad<br>en las <span class="hl">empresas</span></h1>
+
+<p class="hero-sub">
+  Sin teoría vacía. Sin relleno. Solo situaciones reales, tareas reales y un <strong>tutor IA disponible 24h</strong> para cuando te bloquees.
+</p>
+
+<div class="hero-actions">
+  <a href="#cursos" class="btn-primary">Explorar cursos gratis →</a>
+  <a href="#por-que" class="btn-ghost">¿Cómo funciona? ↓</a>
+</div>
+
+<div class="hero-stats">
+  <div>
+    <span class="stat-num">50+</span>
+    <span class="stat-label">Cursos prácticos</span>
+  </div>
+  <div>
+    <span class="stat-num">24h</span>
+    <span class="stat-label">Tutor IA disponible</span>
+  </div>
+  <div>
+    <span class="stat-num">100%</span>
+    <span class="stat-label">Casos reales</span>
+  </div>
+</div>
+```
+
   </div>
 
-  <!-- CARD DEMO -->
+  <!-- DEMO CARD -->
 
   <div class="hero-visual">
-    <div class="course-card-demo" style="position:relative;">
-      <div class="floating-badge top">
-        <div class="badge-icon" style="background:#EDE7FF;">🎯</div>
+    <div class="demo-card">
+      <div class="demo-float top">
+        <div class="demo-float-icon" style="background:#EDE7FF;">🎯</div>
         <div>
-          <div style="font-weight:600;color:#2D1B69;font-size:0.78rem;">Ejercicio completado</div>
-          <div style="font-size:0.7rem;color:#8B7DB5;">Informe de ventas · hace 2 min</div>
+          <div style="font-weight:600;color:#2D1B69;font-size:0.76rem;">Ejercicio completado</div>
+          <div style="font-size:0.68rem;color:#8B7DB5;">Informe de ventas · hace 2 min</div>
         </div>
       </div>
 
 ```
-  <div class="card-header">
-    <div class="card-icon">💼</div>
+  <div class="demo-header">
+    <div class="demo-icon">💼</div>
     <div>
-      <div class="card-title">Tu primera semana<br>como administrativo</div>
-      <div class="card-tag">Módulo 2 · Gestión de correos</div>
+      <div class="demo-title">Tu primera semana<br>como administrativo</div>
+      <div class="demo-tag">Módulo 2 · Gestión de correos</div>
     </div>
   </div>
 
-  <div class="lesson-list">
-    <div class="lesson-item done">
+  <div class="demo-lessons">
+    <div class="demo-lesson done">
       <div class="lesson-dot"></div>
       Recibir y clasificar correos urgentes
     </div>
-    <div class="lesson-item active">
+    <div class="demo-lesson active">
       <div class="lesson-dot"></div>
       Responder a un cliente enfadado
     </div>
-    <div class="lesson-item">
+    <div class="demo-lesson">
       <div class="lesson-dot"></div>
       Gestionar agenda del gerente
     </div>
   </div>
 
-  <div class="ai-chat-box">
-    <div class="ai-label">Tutor IA — HazloReal</div>
-    <div class="ai-message">
-      <strong>Recuerda:</strong> en este caso el cliente lleva 3 días sin respuesta. Tu tono debe ser empático pero profesional. Empieza disculpándote sin culpar a nadie.
+  <div class="demo-ai">
+    <div class="demo-ai-label">✦ Tutor IA — HazloReal</div>
+    <div class="demo-ai-text">
+      <strong>Recuerda:</strong> el cliente lleva 3 días sin respuesta. Empieza disculpándote sin culpar a nadie — tono empático pero profesional.
     </div>
   </div>
 
-  <div class="floating-badge bottom">
-    <div class="badge-icon" style="background:#E8F5E9;">📈</div>
+  <div class="demo-float bot">
+    <div class="demo-float-icon" style="background:#E8F5E9;">📈</div>
     <div>
-      <div style="font-weight:600;color:#2D1B69;font-size:0.78rem;">+12 alumnos hoy</div>
-      <div style="font-size:0.7rem;color:#8B7DB5;">se unieron a este curso</div>
+      <div style="font-weight:600;color:#2D1B69;font-size:0.76rem;">+12 alumnos hoy</div>
+      <div style="font-size:0.68rem;color:#8B7DB5;">se unieron a este curso</div>
     </div>
   </div>
 </div>
@@ -1066,38 +948,38 @@ h1 { font-size: 2.4rem; }
   </div>
 </section>
 
-<!-- DIFERENCIADORES -->
+<!-- POR QUÉ -->
 
-<section class="diff-section" id="diferencias">
-  <div class="section-label">Por qué HazloReal</div>
-  <div class="section-title">Lo que no encontrarás<br>en ningún otro sitio</div>
+<section class="why-section" id="por-que">
+  <div class="s-label">Por qué HazloReal</div>
+  <div class="s-title">Lo que no encontrarás<br>en ningún otro sitio</div>
   <div class="diff-grid">
-    <div class="diff-card fade-in">
+    <div class="diff-card fi">
       <span class="diff-emoji">🏢</span>
       <h3>Situaciones reales de empresa</h3>
       <p>Cada lección simula un día real de trabajo. No aprendes conceptos, resuelves problemas concretos con archivos, correos y decisiones reales.</p>
     </div>
-    <div class="diff-card fade-in">
+    <div class="diff-card fi">
       <span class="diff-emoji">🤖</span>
       <h3>Tutor IA dentro de cada curso</h3>
       <p>¿Te quedas bloqueado? El tutor sabe exactamente en qué lección estás y te responde en contexto. Como tener un profesor disponible siempre.</p>
     </div>
-    <div class="diff-card fade-in">
+    <div class="diff-card fi">
       <span class="diff-emoji">📁</span>
       <h3>Entregables reales</h3>
-      <p>Al terminar cada curso tienes algo concreto: un archivo, un informe, una tarea completada. Algo que puedes mostrar en una entrevista o usar en tu trabajo.</p>
+      <p>Al terminar cada curso tienes algo concreto: un archivo, un informe, una tarea completada. Algo que puedes mostrar en una entrevista.</p>
     </div>
-    <div class="diff-card fade-in">
+    <div class="diff-card fi">
       <span class="diff-emoji">🎯</span>
       <h3>Organizado por rol, no por tema</h3>
       <p>Busca por lo que quieres ser: administrativo, gerente, emprendedor, buscador de empleo. No por tecnología o herramienta.</p>
     </div>
-    <div class="diff-card fade-in">
+    <div class="diff-card fi">
       <span class="diff-emoji">⚡</span>
-      <h3>Lecciones de 5-10 minutos</h3>
+      <h3>Lecciones de 5–10 minutos</h3>
       <p>Diseñadas para aprender en el metro, en el descanso o antes de dormir. Sin vídeos de 2 horas que nunca terminas.</p>
     </div>
-    <div class="diff-card fade-in">
+    <div class="diff-card fi">
       <span class="diff-emoji">🌍</span>
       <h3>Para toda la comunidad hispanohablante</h3>
       <p>Contexto real de España y Latinoamérica. No traducciones del inglés, sino cursos creados desde nuestra realidad laboral.</p>
@@ -1108,79 +990,55 @@ h1 { font-size: 2.4rem; }
 <!-- CURSOS -->
 
 <section id="cursos">
-  <div class="section-label">Catálogo</div>
-  <div class="section-title">Empieza por donde<br>tú necesitas</div>
+  <div class="s-label">Catálogo</div>
+  <div class="s-title">Empieza por donde<br>tú necesitas</div>
   <div class="courses-grid">
-    <div class="course-card fade-in">
-      <div class="course-thumb c1"><span>💼</span><span class="course-level">Principiante</span></div>
+    <div class="course-card fi">
+      <div class="course-thumb ct1"><span>💼</span><span class="course-level">Principiante</span></div>
       <div class="course-body">
         <h3>Tu primera semana como administrativo</h3>
         <p>Gestión de correos, facturas, Excel básico y atención a clientes. Exactamente lo que te pedirán el primer día.</p>
-        <div class="course-meta">
-          <span>⏱ 6 horas</span>
-          <span>📁 8 entregables</span>
-          <span>🤖 Tutor IA</span>
-        </div>
+        <div class="course-meta"><span>⏱ 6 horas</span><span>📁 8 entregables</span><span>🤖 Tutor IA</span></div>
       </div>
     </div>
-    <div class="course-card fade-in">
-      <div class="course-thumb c2"><span>🤖</span><span class="course-level">Todos los niveles</span></div>
+    <div class="course-card fi">
+      <div class="course-thumb ct2"><span>🤖</span><span class="course-level">Todos los niveles</span></div>
       <div class="course-body">
         <h3>IA en tu trabajo desde mañana</h3>
         <p>ChatGPT, automatizaciones simples y prompts reales para tareas del día a día. Sin tecnicismos.</p>
-        <div class="course-meta">
-          <span>⏱ 4 horas</span>
-          <span>📁 5 entregables</span>
-          <span>🤖 Tutor IA</span>
-        </div>
+        <div class="course-meta"><span>⏱ 4 horas</span><span>📁 5 entregables</span><span>🤖 Tutor IA</span></div>
       </div>
     </div>
-    <div class="course-card fade-in">
-      <div class="course-thumb c3"><span>🌱</span><span class="course-level">Emprendedor</span></div>
+    <div class="course-card fi">
+      <div class="course-thumb ct3"><span>🌱</span><span class="course-level">Emprendedor</span></div>
       <div class="course-body">
         <h3>Gestión de negocio sin morir en el intento</h3>
         <p>Finanzas básicas reales, gestión de equipo y herramientas digitales. Para el emprendedor que lleva todo solo.</p>
-        <div class="course-meta">
-          <span>⏱ 8 horas</span>
-          <span>📁 10 entregables</span>
-          <span>🤖 Tutor IA</span>
-        </div>
+        <div class="course-meta"><span>⏱ 8 horas</span><span>📁 10 entregables</span><span>🤖 Tutor IA</span></div>
       </div>
     </div>
-    <div class="course-card fade-in">
-      <div class="course-thumb c4"><span>🎓</span><span class="course-level">Buscador de empleo</span></div>
+    <div class="course-card fi">
+      <div class="course-thumb ct4"><span>🎓</span><span class="course-level">Buscador de empleo</span></div>
       <div class="course-body">
         <h3>De candidato a contratado</h3>
         <p>CV real, entrevistas, LinkedIn y qué preguntan de verdad. Simulaciones con casos reales de selección.</p>
-        <div class="course-meta">
-          <span>⏱ 5 horas</span>
-          <span>📁 6 entregables</span>
-          <span>🤖 Tutor IA</span>
-        </div>
+        <div class="course-meta"><span>⏱ 5 horas</span><span>📁 6 entregables</span><span>🤖 Tutor IA</span></div>
       </div>
     </div>
-    <div class="course-card fade-in">
-      <div class="course-thumb c5"><span>👔</span><span class="course-level">Intermedio</span></div>
+    <div class="course-card fi">
+      <div class="course-thumb ct5"><span>👔</span><span class="course-level">Intermedio</span></div>
       <div class="course-body">
         <h3>El gerente que nadie te enseñó a ser</h3>
         <p>Reuniones, feedback, conflictos y decisiones difíciles. Lo que no viene en ningún manual de empresa.</p>
-        <div class="course-meta">
-          <span>⏱ 7 horas</span>
-          <span>📁 9 entregables</span>
-          <span>🤖 Tutor IA</span>
-        </div>
+        <div class="course-meta"><span>⏱ 7 horas</span><span>📁 9 entregables</span><span>🤖 Tutor IA</span></div>
       </div>
     </div>
-    <div class="course-card fade-in">
-      <div class="course-thumb c6"><span>📊</span><span class="course-level">Principiante</span></div>
+    <div class="course-card fi">
+      <div class="course-thumb ct6"><span>📊</span><span class="course-level">Principiante</span></div>
       <div class="course-body">
         <h3>Excel para tu trabajo real</h3>
         <p>No fórmulas aleatorias. Las hojas que usarás en tu empresa, con los datos que encontrarás de verdad.</p>
-        <div class="course-meta">
-          <span>⏱ 5 horas</span>
-          <span>📁 7 entregables</span>
-          <span>🤖 Tutor IA</span>
-        </div>
+        <div class="course-meta"><span>⏱ 5 horas</span><span>📁 7 entregables</span><span>🤖 Tutor IA</span></div>
       </div>
     </div>
   </div>
@@ -1189,52 +1047,37 @@ h1 { font-size: 2.4rem; }
 <!-- AI TUTOR -->
 
 <section class="ai-section">
-  <div class="two-col" style="position:relative;z-index:1;">
+  <div class="two-col">
     <div>
-      <div class="section-label">Tutor IA</div>
-      <div class="section-title">Tu profesor personal,<br>siempre disponible</div>
-      <p class="section-sub">
-        Dentro de cada curso hay un asistente que sabe exactamente qué estás aprendiendo y te responde en contexto. No es un chatbot genérico. Es un tutor que conoce tu curso.
-      </p>
-      <div style="margin-top:32px;display:flex;flex-direction:column;gap:14px;">
-        <div style="display:flex;align-items:center;gap:12px;font-size:0.88rem;color:rgba(255,255,255,0.75);">
-          <div style="width:28px;height:28px;background:rgba(124,77,255,0.4);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.7rem;">✓</div>
-          Responde dudas en el contexto exacto de tu lección
-        </div>
-        <div style="display:flex;align-items:center;gap:12px;font-size:0.88rem;color:rgba(255,255,255,0.75);">
-          <div style="width:28px;height:28px;background:rgba(124,77,255,0.4);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.7rem;">✓</div>
-          Te da ejemplos distintos si no entiendes el primero
-        </div>
-        <div style="display:flex;align-items:center;gap:12px;font-size:0.88rem;color:rgba(255,255,255,0.75);">
-          <div style="width:28px;height:28px;background:rgba(124,77,255,0.4);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.7rem;">✓</div>
-          Disponible las 24 horas, sin esperar respuesta
-        </div>
+      <div class="s-label">Tutor IA</div>
+      <div class="s-title">Tu profesor personal,<br>siempre disponible</div>
+      <p class="s-sub">Dentro de cada curso hay un asistente que sabe exactamente qué estás aprendiendo y te responde en contexto. No es un chatbot genérico. Es un tutor que conoce tu curso.</p>
+      <div class="ai-checks">
+        <div class="ai-check"><div class="ai-check-dot">✓</div> Responde dudas en el contexto exacto de tu lección</div>
+        <div class="ai-check"><div class="ai-check-dot">✓</div> Te da ejemplos distintos si no entiendes el primero</div>
+        <div class="ai-check"><div class="ai-check-dot">✓</div> Disponible las 24 horas, sin esperar respuesta</div>
       </div>
     </div>
     <div>
-      <div class="ai-demo">
-        <div style="font-size:0.75rem;color:rgba(255,255,255,0.4);margin-bottom:20px;font-weight:600;letter-spacing:1px;text-transform:uppercase;">Conversación en curso</div>
-        <div class="chat-msg">
-          <div class="chat-avatar user">👤</div>
-          <div class="chat-bubble user-bubble">No entiendo cómo responder al cliente sin sonar a que tenemos la culpa</div>
+      <div class="ai-demo-box">
+        <div class="ai-demo-label">Conversación en curso</div>
+        <div class="chat-row">
+          <div class="chat-av u">👤</div>
+          <div class="chat-bub u">No entiendo cómo responder al cliente sin sonar a que tenemos la culpa</div>
         </div>
-        <div class="chat-msg">
-          <div class="chat-avatar ai">✦</div>
-          <div class="chat-bubble">
-            Buena pregunta. La clave es separar la disculpa de la responsabilidad. Di algo como: <em>"Entiendo tu frustración y lamentamos los inconvenientes..."</em> — reconoces el problema sin admitir error. ¿Quieres que practiquemos con un ejemplo diferente?
-          </div>
+        <div class="chat-row">
+          <div class="chat-av a">IA</div>
+          <div class="chat-bub">La clave es separar la disculpa de la responsabilidad. Di algo como: <em>"Entiendo tu frustración y lamentamos los inconvenientes..."</em> — reconoces el problema sin admitir error. ¿Quieres que practiquemos con un ejemplo diferente?</div>
         </div>
-        <div class="chat-msg">
-          <div class="chat-avatar user">👤</div>
-          <div class="chat-bubble user-bubble">Sí, pon un ejemplo de sector hostelería</div>
+        <div class="chat-row">
+          <div class="chat-av u">👤</div>
+          <div class="chat-bub u">Sí, pon un ejemplo del sector hostelería</div>
         </div>
-        <div style="display:flex;gap:12px;align-items:center;padding-left:48px;">
-          <div class="chat-typing">
-            <div class="dot-typing"></div>
-            <div class="dot-typing"></div>
-            <div class="dot-typing"></div>
-          </div>
-          <span style="font-size:0.75rem;color:rgba(255,255,255,0.35);">El tutor está escribiendo...</span>
+        <div class="typing">
+          <div class="typing-dot"></div>
+          <div class="typing-dot"></div>
+          <div class="typing-dot"></div>
+          <span class="typing-txt">El tutor está escribiendo...</span>
         </div>
       </div>
     </div>
@@ -1243,43 +1086,34 @@ h1 { font-size: 2.4rem; }
 
 <!-- TESTIMONIOS -->
 
-<section class="testimonials-section">
-  <div class="text-center">
-    <div class="section-label">Testimonios</div>
-    <div class="section-title">Lo que dicen quienes<br>ya lo están aplicando</div>
+<section class="testi-section">
+  <div class="tc">
+    <div class="s-label">Testimonios</div>
+    <div class="s-title">Lo que dicen quienes<br>ya lo están aplicando</div>
   </div>
-  <div class="testimonials-grid">
-    <div class="testi-card fade-in">
+  <div class="testi-grid">
+    <div class="testi-card fi">
       <div class="testi-stars">★★★★★</div>
       <p class="testi-text">"Llevaba meses con cursos online que terminaba y no sabía hacer nada. En HazloReal al segundo día ya había resuelto situaciones que se parecían a mi trabajo real."</p>
       <div class="testi-author">
-        <div class="testi-avatar" style="background:#7C4DFF;">M</div>
-        <div>
-          <div class="testi-name">María G.</div>
-          <div class="testi-role">Administrativa · Madrid</div>
-        </div>
+        <div class="testi-av" style="background:#7C4DFF;">M</div>
+        <div><div class="testi-name">María G.</div><div class="testi-role">Administrativa · Madrid</div></div>
       </div>
     </div>
-    <div class="testi-card fade-in">
+    <div class="testi-card fi">
       <div class="testi-stars">★★★★★</div>
       <p class="testi-text">"El tutor IA es lo que marca la diferencia. Le pregunté algo específico de mi sector y me respondió con un ejemplo que tenía sentido para mí. Nunca había tenido eso."</p>
       <div class="testi-author">
-        <div class="testi-avatar" style="background:#FF6B35;">C</div>
-        <div>
-          <div class="testi-name">Carlos M.</div>
-          <div class="testi-role">Gerente PYME · Bogotá</div>
-        </div>
+        <div class="testi-av" style="background:#FF6B35;">C</div>
+        <div><div class="testi-name">Carlos M.</div><div class="testi-role">Gerente PYME · Bogotá</div></div>
       </div>
     </div>
-    <div class="testi-card fade-in">
+    <div class="testi-card fi">
       <div class="testi-stars">★★★★★</div>
-      <p class="testi-text">"Me ayudó a preparar la entrevista de trabajo más importante de mi vida. El curso simula preguntas reales y el tutor me corregía en tiempo real. Conseguí el trabajo."</p>
+      <p class="testi-text">"Me ayudó a preparar la entrevista más importante de mi vida. El curso simula preguntas reales y el tutor me corregía en tiempo real. Conseguí el trabajo."</p>
       <div class="testi-author">
-        <div class="testi-avatar" style="background:#5B3BB5;">L</div>
-        <div>
-          <div class="testi-name">Lucía P.</div>
-          <div class="testi-role">Recién graduada · Barcelona</div>
-        </div>
+        <div class="testi-av" style="background:#5B3BB5;">L</div>
+        <div><div class="testi-name">Lucía P.</div><div class="testi-role">Recién graduada · Barcelona</div></div>
       </div>
     </div>
   </div>
@@ -1288,35 +1122,35 @@ h1 { font-size: 2.4rem; }
 <!-- PRECIOS -->
 
 <section id="precios">
-  <div class="text-center">
-    <div class="section-label">Precios</div>
-    <div class="section-title">Sin sorpresas,<br>sin letra pequeña</div>
-    <p class="section-sub">Empieza gratis y sube cuando quieras. Sin permanencia.</p>
+  <div class="tc">
+    <div class="s-label">Precios</div>
+    <div class="s-title">Sin sorpresas,<br>sin letra pequeña</div>
+    <p class="s-sub">Empieza gratis y sube cuando quieras. Sin permanencia.</p>
   </div>
-  <div class="pricing-grid">
-    <div class="price-card fade-in">
+  <div class="pricing-wrap">
+    <div class="price-card fi">
       <div class="price-name">Gratuito</div>
       <div class="price-amount">0€</div>
-      <div class="price-period">para siempre</div>
-      <ul class="price-features">
-        <li><div class="check">✓</div> Primeros módulos de cada curso</li>
-        <li><div class="check">✓</div> Tutor IA (5 preguntas/día)</li>
-        <li><div class="check">✓</div> Acceso a la comunidad</li>
-        <li><div class="check">✓</div> Certificado básico</li>
+      <div class="price-per">para siempre</div>
+      <ul class="price-list">
+        <li><div class="price-check">✓</div> Primeros módulos de cada curso</li>
+        <li><div class="price-check">✓</div> Tutor IA (5 preguntas/día)</li>
+        <li><div class="price-check">✓</div> Acceso a la comunidad</li>
+        <li><div class="price-check">✓</div> Certificado básico</li>
       </ul>
-      <button class="price-btn outline">Empezar gratis</button>
+      <button class="price-btn">Empezar gratis</button>
     </div>
-    <div class="price-card featured fade-in">
-      <div class="featured-tag">⚡ MÁS POPULAR</div>
+    <div class="price-card hot fi">
+      <div class="hot-tag">⚡ MÁS POPULAR</div>
       <div class="price-name">Premium</div>
       <div class="price-amount">12€</div>
-      <div class="price-period">al mes · cancela cuando quieras</div>
-      <ul class="price-features">
-        <li><div class="check">✓</div> Todos los cursos completos</li>
-        <li><div class="check">✓</div> Tutor IA ilimitado</li>
-        <li><div class="check">✓</div> Archivos y entregables</li>
-        <li><div class="check">✓</div> Certificados con valor real</li>
-        <li><div class="check">✓</div> Cursos nuevos cada mes</li>
+      <div class="price-per">al mes · cancela cuando quieras</div>
+      <ul class="price-list">
+        <li><div class="price-check">✓</div> Todos los cursos completos</li>
+        <li><div class="price-check">✓</div> Tutor IA ilimitado</li>
+        <li><div class="price-check">✓</div> Archivos y entregables</li>
+        <li><div class="price-check">✓</div> Certificados con valor real</li>
+        <li><div class="price-check">✓</div> Cursos nuevos cada mes</li>
       </ul>
       <button class="price-btn solid">Empezar 7 días gratis →</button>
     </div>
@@ -1340,23 +1174,18 @@ h1 { font-size: 2.4rem; }
 </footer>
 
 <script>
-  // Scroll animations
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => {
-          entry.target.classList.add('visible');
-        }, 100);
-        observer.unobserve(entry.target);
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('vis');
+        obs.unobserve(e.target);
       }
     });
-  }, { threshold: 0.1 });
+  }, { threshold: 0.08 });
 
-  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-  // Stagger cards
-  document.querySelectorAll('.diff-grid .diff-card, .courses-grid .course-card, .testimonials-grid .testi-card').forEach((el, i) => {
-    el.style.transitionDelay = `${i * 0.08}s`;
+  document.querySelectorAll('.fi').forEach((el, i) => {
+    el.style.transitionDelay = `${(i % 3) * 0.09}s`;
+    obs.observe(el);
   });
 </script>
 
